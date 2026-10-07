@@ -1,0 +1,62 @@
+{
+  "1617271804": {
+    "allocationId": 1617271804,
+    "available": [
+      {
+        "carrier": "amazon_shipping_v2",
+        "serviceType": "amazon_shipping_v2-ontrac-1",
+        "serviceTitle": "OnTrac Ground",
+        "remoteShipmentId": "prb2a30ae83",
+        "serviceCarrier": "ontrac",
+        "subCarrierId": "ONTRAC",
+        "totalNetCharge": "5.25",
+        "currency": "USD",
+        "meetsDeliveryPromise": true,
+        "requiresValueAddedServiceChoice": false
+      },
+      {
+        "carrier": "amazon_shipping_v2",
+        "serviceType": "amazon_shipping_v2-usps-ga",
+        "serviceTitle": "USPS Ground Advantage (1 - 70 lb)",
+        "remoteShipmentId": "prb2a30ae83",
+        "serviceCarrier": "usps",
+        "subCarrierId": "USPS",
+        "totalNetCharge": "6.85",
+        "currency": "USD",
+        "meetsDeliveryPromise": true,
+        "requiresValueAddedServiceChoice": false
+      }
+    ],
+    "quotesExpireAt": "2026-10-07T06:59:59.976Z"
+  },
+  "1617190851": {
+    "allocationId": 1617190851,
+    "available": [
+      {
+        "carrier": "amazon_shipping_v2",
+        "serviceType": "amazon_shipping_v2-4fa2e46a-51ab-4d61-8cea-84d3ca65aa0d",
+        "serviceTitle": "USPS Ground Advantage (less than 1lb)",
+        "remoteShipmentId": "prb2a30ae83",
+        "serviceCarrier": "usps",
+        "subCarrierId": "USPS",
+        "totalNetCharge": "6.07",
+        "currency": "USD",
+        "meetsDeliveryPromise": true,
+        "requiresValueAddedServiceChoice": false
+      },
+      {
+        "carrier": "amazon_shipping_v2",
+        "serviceType": "amazon_shipping_v2-f9f5da53",
+        "serviceTitle": "UPS Ground Saver (Tender to UPS only)",
+        "remoteShipmentId": "prb2a30ae83",
+        "serviceCarrier": "ups",
+        "subCarrierId": "UPS",
+        "totalNetCharge": "7.44",
+        "currency": "USD",
+        "meetsDeliveryPromise": true,
+        "requiresValueAddedServiceChoice": false
+      }
+    ],
+    "quotesExpireAt": "2026-10-07T06:59:59.976Z"
+  }
+}

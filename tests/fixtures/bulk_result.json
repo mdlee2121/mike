@@ -1,0 +1,17 @@
+{
+  "bulkShipmentId": 4242,
+  "settled": true,
+  "complete": true,
+  "items": [
+    {
+      "allocationId": 1617190851,
+      "state": "completed",
+      "shipmentId": 880001
+    },
+    {
+      "allocationId": 1617271804,
+      "state": "completed",
+      "shipmentId": 880002
+    }
+  ]
+}

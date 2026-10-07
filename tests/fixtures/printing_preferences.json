@@ -1,0 +1,23 @@
+{
+  "preferenceId": "packingSlip",
+  "title": "Shipping Label and Packing Slip",
+  "documentSize": "4x6",
+  "orientation": "portrait",
+  "integrated": false,
+  "usesDefaultTemplate": false,
+  "shippingLabelFormat": "pdf",
+  "printAtShip": [
+    "[Veeqo]packing_slip"
+  ],
+  "templates": [
+    {
+      "format": "shipping_labels",
+      "name": "shipping_labels"
+    },
+    {
+      "format": "packing_slip",
+      "name": "[Veeqo]packing_slip"
+    }
+  ],
+  "resolvedFromSetting": true
+}

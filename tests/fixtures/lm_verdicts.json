@@ -1,0 +1,29 @@
+{
+  "window": {
+    "startDate": "2026-09-23",
+    "endDate": "2026-10-07",
+    "integrationConfigId": 9554
+  },
+  "results": [
+    {
+      "orderId": "113-1759424-0809847",
+      "verdict": "MFN",
+      "isMcf": false,
+      "lmStatus": "Accepted",
+      "lmOrderId": 581979729
+    },
+    {
+      "orderId": "114-4215020-7471444",
+      "verdict": "MFN",
+      "isMcf": false,
+      "lmStatus": "Accepted",
+      "lmOrderId": 581969701
+    },
+    {
+      "orderId": "112-9999999-0000001",
+      "verdict": "MCF",
+      "isMcf": true,
+      "mcfStatus": "not yet requested"
+    }
+  ]
+}

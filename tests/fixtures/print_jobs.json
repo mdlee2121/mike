@@ -1,0 +1,42 @@
+{
+  "results": [
+    {
+      "jobId": "200002",
+      "status": "document_ready",
+      "identifier": "113-1759424-0809847, 114-4215020-7471444",
+      "entityType": "order",
+      "printableCount": 2,
+      "templates": [
+        {
+          "name": "[Veeqo]packing_slip",
+          "entity": "order",
+          "format": "packing_slip"
+        }
+      ],
+      "documentUrls": [
+        "https://example.invalid/200002.pdf"
+      ],
+      "warnings": null,
+      "failures": null
+    },
+    {
+      "jobId": "200001",
+      "status": "document_ready",
+      "identifier": "113-1759424-0809847, 114-4215020-7471444",
+      "entityType": "order",
+      "printableCount": 2,
+      "templates": [
+        {
+          "name": "shipping_labels",
+          "entity": "order",
+          "format": "shipping_labels"
+        }
+      ],
+      "documentUrls": [
+        "https://example.invalid/200001.pdf"
+      ],
+      "warnings": null,
+      "failures": null
+    }
+  ]
+}
