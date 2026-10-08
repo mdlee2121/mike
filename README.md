@@ -38,6 +38,34 @@ scripts/package_skill.sh
 ```
 Builds `dist/mfn-label-run.zip` with `SKILL.md` and the `mfn` code, ready to upload.
 
+## `inbound` — Send to Amazon upload files
+
+Replaces step 8 of the `invoice-to-inbound` skill (searching and adding SKUs one by
+one) with one file upload per workflow. It stops at "Choose inventory to send",
+the same place the skill does; no shipment is built through the API.
+
+```
+python3 -m inbound sta-file --input lines.json --out-dir run/<vendor>-<invoice>
+```
+
+`lines.json` is the units in hand, with each SKU's FNSKU from DataDoe:
+
+```json
+{"vendor": "Radial", "invoice": "INV38499",
+ "lines": [{"sku": "RADR8001100A", "asin": "B0...", "fnsku": "X00...", "qty": 40}]}
+```
+
+| Guarantee | |
+|---|---|
+| Under-5 split | SKUs under 5 units go in `<Vendor> <Invoice#> Part 2`; the rest in `<Vendor> <Invoice#>`. |
+| Barcode check | A SKU whose FNSKU is blank or equals the ASIN is held back with the reason, never put in a file. |
+| Counter check | Prints the exact "SKUs ready to send: N (M units)" the page should show after upload. |
+
+Upload each file into a **fresh** workflow only: switching a workflow that already
+has SKUs to file upload clears it. The template layout is in `inbound/config.py`;
+it has not yet been checked against a real upload, so compare it with Amazon's
+downloaded template on the first run.
+
 ### Roadmap
 
 1. **Core logic** (this): works with today's Cowork connectors.
