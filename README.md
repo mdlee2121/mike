@@ -62,9 +62,11 @@ python3 -m inbound sta-file --input lines.json --out-dir run/<vendor>-<invoice>
 | Counter check | Prints the exact "SKUs ready to send: N (M units)" the page should show after upload. |
 
 Upload each file into a **fresh** workflow only: switching a workflow that already
-has SKUs to file upload clears it. The template layout is in `inbound/config.py`;
-it has not yet been checked against a real upload, so compare it with Amazon's
-downloaded template on the first run.
+has SKUs to file upload clears it. The layout in `inbound/config.py` is copied cell
+for cell from Amazon's template (Oct 2026). Units go in as individual units; the
+case-pack, expiration and lot columns are left blank. The template has no prep
+category, so a new SKU's "Prep and labeling details needed" flag still has to be
+cleared on the page.
 
 ### Roadmap
 

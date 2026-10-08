@@ -10,11 +10,16 @@ from inbound import config, xlsx
 
 
 def sheet_rows(workflow):
-    rows = [list(pair) for pair in config.STA_DEFAULTS]
-    rows.append([])
+    """The template sheet as a list of rows, row 1 first. Units go in as individual
+    units: SKU and quantity only, case-pack columns left blank."""
+    rows = [[config.STA_NOTE], []]
+    rows += [list(pair) for pair in config.STA_DEFAULTS]
+    rows += [[], []]
+    rows.append(list(config.STA_GROUP_ROW))
     rows.append(list(config.STA_HEADER))
+    assert len(rows) == config.STA_FIRST_DATA_ROW - 1
     for r in workflow["skus"]:
-        rows.append([r["sku"], r["qty"], config.PREP_OWNER, config.LABELING_OWNER])
+        rows.append([r["sku"], r["qty"]])
     return rows
 
 

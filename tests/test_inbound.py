@@ -65,12 +65,15 @@ class SplitTest(unittest.TestCase):
 
 
 class FileTest(unittest.TestCase):
-    def test_sheet_rows_follow_the_template(self):
+    def test_sheet_rows_match_amazons_template(self):
         wf = build_stage(doc(line("A&B", 7)))["workflows"][0]
         rows = stafile.sheet_rows(wf)
-        self.assertEqual(rows[0], ["Default prep owner", config.PREP_OWNER])
-        self.assertEqual(rows[3], list(config.STA_HEADER))
-        self.assertEqual(rows[4], ["A&B", 7, config.PREP_OWNER, config.LABELING_OWNER])
+        self.assertEqual(rows[0], ["Please review the Example tab before you complete this sheet"])
+        self.assertEqual(rows[2], ["Default prep owner", "Seller"])
+        self.assertEqual(rows[3], ["Default labeling owner", "Seller"])
+        self.assertEqual(rows[7][:2], ["Merchant SKU", "Quantity"])
+        self.assertEqual(rows[7][4], "Units per box ")
+        self.assertEqual(rows[8], ["A&B", 7])
 
     def test_cli_writes_one_file_per_workflow(self):
         with tempfile.TemporaryDirectory() as d:
@@ -85,7 +88,7 @@ class FileTest(unittest.TestCase):
                 self.assertIsNone(z.testzip())
                 sheet = z.read("xl/worksheets/sheet1.xml").decode()
             self.assertIn("A&amp;B", sheet)
-            self.assertIn('<c r="B5"><v>7</v></c>', sheet)
+            self.assertIn('<c r="B9"><v>7</v></c>', sheet)
 
 
 if __name__ == "__main__":
